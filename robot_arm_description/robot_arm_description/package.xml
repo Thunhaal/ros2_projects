@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>robot_arm_description</name>
+  <version>1.0.0</version>
+  <description>
+    URDF description of a 5-DOF hobby-servo robotic arm with a parallel gripper.
+    All link lengths, joint origins and joint axes were extracted from the
+    original SolidWorks STEP file (Robotic Arm 3D Model.STEP, AP214).
+    Visual/collision geometry is simplified to URDF primitives.
+  </description>
+  <maintainer email="srivardhan@example.com">SRIVARDHAN S.</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>urdf</exec_depend>
+
+  <!-- Gazebo (new Gazebo / gz-sim).  Swap for gazebo_ros + gazebo_ros2_control
+       if you are on Gazebo Classic. -->
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
+  <exec_depend>gz_ros2_control</exec_depend>
+  <exec_depend>ros2_control</exec_depend>
+  <exec_depend>ros2_controllers</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>joint_trajectory_controller</exec_depend>
+  <exec_depend>joint_state_broadcaster</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

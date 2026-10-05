@@ -1,0 +1,27 @@
+# ---------------------------------------------------------------------------
+# joint_limits.yaml
+#
+# IMPORTANT: the STEP file contains NO joint-limit information (it is a static
+# geometry export, not a kinematic model).  Every limit below is an ASSUMPTION.
+#
+# Basis for the assumption: the STEP assembly names the actual actuators, so
+# the limits are taken from those servo datasheets, centred on the CAD pose
+# (which is q = 0 for this URDF):
+#   joint_1..joint_3 -> "Servo Motor MG996R"     (~180 deg travel, 9.4 kgf.cm)
+#   joint_4, joint_5 -> "Servo Motor Micro 9g"   (~180 deg travel, 1.8 kgf.cm)
+#   joint_gripper    -> "Servo Motor Micro 9g"   (range derived from geometry)
+#
+# joint_gripper: 0.00 rad = fully OPEN (the pose in the STEP file).
+#               -0.35 rad = pads meet on the gripper centreline.  This value
+#               WAS derived from the STEP geometry by rotating the modelled
+#               finger pads about their pivots until they met (-0.331 rad for
+#               the left finger, -0.376 rad for the right; the CAD pose is not
+#               perfectly symmetric, so -0.35 is used for both).
+# ---------------------------------------------------------------------------
+joint_limits:
+  joint_1:        {has_position_limits: true, min_position: -1.5708, max_position: 1.5708, has_velocity_limits: true, max_velocity: 6.0, has_effort_limits: true, max_effort: 0.90}
+  joint_2:        {has_position_limits: true, min_position: -1.5708, max_position: 1.5708, has_velocity_limits: true, max_velocity: 6.0, has_effort_limits: true, max_effort: 0.90}
+  joint_3:        {has_position_limits: true, min_position: -1.5708, max_position: 1.5708, has_velocity_limits: true, max_velocity: 6.0, has_effort_limits: true, max_effort: 0.90}
+  joint_4:        {has_position_limits: true, min_position: -1.5708, max_position: 1.5708, has_velocity_limits: true, max_velocity: 8.0, has_effort_limits: true, max_effort: 0.18}
+  joint_5:        {has_position_limits: true, min_position: -1.5708, max_position: 1.5708, has_velocity_limits: true, max_velocity: 8.0, has_effort_limits: true, max_effort: 0.18}
+  joint_gripper:  {has_position_limits: true, min_position: -0.35,   max_position: 0.0,    has_velocity_limits: true, max_velocity: 4.0, has_effort_limits: true, max_effort: 0.18}

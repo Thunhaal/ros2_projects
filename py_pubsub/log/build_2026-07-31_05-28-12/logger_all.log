@@ -1,0 +1,93 @@
+[0.760s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'py_pubsub']
+[0.760s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['py_pubsub'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7b66b8ec4170>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7b66b8fe0ce0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7b66b8fe0ce0>>, mixin_verb=('build',))
+[0.960s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.960s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.960s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.960s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.960s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.960s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.960s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/acer/ros2_ws/src/py_pubsub'
+[0.961s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.961s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.962s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.962s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.962s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.962s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.963s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.963s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.963s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.085s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_python' and name 'py_pubsub'
+[1.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[1.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[1.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[1.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[1.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[1.185s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[1.185s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[1.206s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/acer/ros2_ws/install
+[1.215s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 497 installed packages in /opt/ros/jazzy
+[1.222s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.474s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_args' from command line to 'None'
+[1.474s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_target' from command line to 'None'
+[1.474s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.474s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_clean_cache' from command line to 'False'
+[1.474s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_clean_first' from command line to 'False'
+[1.474s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'cmake_force_configure' from command line to 'False'
+[1.474s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'ament_cmake_args' from command line to 'None'
+[1.475s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'catkin_cmake_args' from command line to 'None'
+[1.475s] Level 5:colcon.colcon_core.verb:set package 'py_pubsub' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.475s] DEBUG:colcon.colcon_core.verb:Building package 'py_pubsub' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/acer/ros2_ws/src/py_pubsub/build/py_pubsub', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub', 'merge_install': False, 'path': '/home/acer/ros2_ws/src/py_pubsub', 'symlink_install': False, 'test_result_base': None}
+[1.475s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.479s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.480s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/acer/ros2_ws/src/py_pubsub' with build type 'ament_python'
+[1.481s] Level 1:colcon.colcon_core.shell:create_environment_hook('py_pubsub', 'ament_prefix_path')
+[1.508s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.509s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/py_pubsub/hook/ament_prefix_path.ps1'
+[1.516s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/py_pubsub/hook/ament_prefix_path.dsv'
+[1.518s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/py_pubsub/hook/ament_prefix_path.sh'
+[1.522s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.522s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.085s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/acer/ros2_ws/src/py_pubsub'
+[2.086s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.086s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.751s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: upload_docs, sdist, build_py, test, develop, egg_info, install_egg_info, build_scripts, rotate, symlink_data, register, setopt, build_clib, install_scripts, bdist_dumb, build, install_headers, check, dist_info, compile_catalog, extract_messages, easy_install, bdist_rpm, editable_wheel, build_ext, bdist_wheel, clean, install_lib, init_catalog, update_catalog, upload, alias, saveopts, install, bdist_egg, install_data, bdist
+[4.756s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/acer/ros2_ws/src/py_pubsub': PYTHONPATH=/home/acer/ros2_ws/src/py_pubsub/build/py_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/py_pubsub build --build-base /home/acer/ros2_ws/src/py_pubsub/build/py_pubsub/build install --record /home/acer/ros2_ws/src/py_pubsub/build/py_pubsub/install.log --install-scripts $base/lib/py_pubsub --single-version-externally-managed install_data
+[5.822s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/acer/ros2_ws/src/py_pubsub' returned '0': PYTHONPATH=/home/acer/ros2_ws/src/py_pubsub/build/py_pubsub/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/py_pubsub build --build-base /home/acer/ros2_ws/src/py_pubsub/build/py_pubsub/build install --record /home/acer/ros2_ws/src/py_pubsub/build/py_pubsub/install.log --install-scripts $base/lib/py_pubsub --single-version-externally-managed install_data
+[5.853s] Level 1:colcon.colcon_core.environment:checking '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub' for CMake module files
+[5.854s] Level 1:colcon.colcon_core.environment:checking '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub' for CMake config files
+[5.857s] Level 1:colcon.colcon_core.environment:checking '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/lib'
+[5.858s] Level 1:colcon.colcon_core.environment:checking '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/bin'
+[5.858s] Level 1:colcon.colcon_core.environment:checking '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/lib/pkgconfig/py_pubsub.pc'
+[5.858s] Level 1:colcon.colcon_core.environment:checking '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/lib/python3.12/site-packages'
+[5.858s] Level 1:colcon.colcon_core.shell:create_environment_hook('py_pubsub', 'pythonpath')
+[5.859s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/py_pubsub/hook/pythonpath.ps1'
+[5.860s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/py_pubsub/hook/pythonpath.dsv'
+[5.860s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/py_pubsub/hook/pythonpath.sh'
+[5.862s] Level 1:colcon.colcon_core.environment:checking '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/bin'
+[5.862s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(py_pubsub)
+[5.862s] INFO:colcon.colcon_core.shell:Creating package script '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/py_pubsub/package.ps1'
+[5.866s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/py_pubsub/package.dsv'
+[5.867s] INFO:colcon.colcon_core.shell:Creating package script '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/py_pubsub/package.sh'
+[5.869s] INFO:colcon.colcon_core.shell:Creating package script '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/py_pubsub/package.bash'
+[5.871s] INFO:colcon.colcon_core.shell:Creating package script '/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/py_pubsub/package.zsh'
+[5.873s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/acer/ros2_ws/src/py_pubsub/install/py_pubsub/share/colcon-core/packages/py_pubsub)
+[5.874s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[5.875s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[5.876s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[5.876s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[6.002s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[6.003s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[6.003s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[6.003s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[6.023s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[6.023s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[6.023s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acer/ros2_ws/src/py_pubsub/install/local_setup.ps1'
+[6.027s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/acer/ros2_ws/src/py_pubsub/install/_local_setup_util_ps1.py'
+[6.031s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acer/ros2_ws/src/py_pubsub/install/setup.ps1'
+[6.035s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acer/ros2_ws/src/py_pubsub/install/local_setup.sh'
+[6.037s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/acer/ros2_ws/src/py_pubsub/install/_local_setup_util_sh.py'
+[6.039s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acer/ros2_ws/src/py_pubsub/install/setup.sh'
+[6.044s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acer/ros2_ws/src/py_pubsub/install/local_setup.bash'
+[6.046s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acer/ros2_ws/src/py_pubsub/install/setup.bash'
+[6.050s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/acer/ros2_ws/src/py_pubsub/install/local_setup.zsh'
+[6.052s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/acer/ros2_ws/src/py_pubsub/install/setup.zsh'

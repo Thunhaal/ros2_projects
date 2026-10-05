@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<!-- =====================================================================
+     robot_arm.urdf  -  5-DOF servo arm + parallel gripper
+     Generated from  "Robotic Arm 3D Model.STEP"  (SolidWorks 2022, AP214)
+     All geometry derived from the STEP file.  STEP is in millimetres;
+     every value below is in METRES / RADIANS / KILOGRAMS.
+
+     Base frame (base_link): origin on the axis of the round base plate,
+     at its BOTTOM face.  X = forward (arm reach direction),
+     Y = left, Z = up.  Right-handed, ROS REP-103 compliant.
+     The whole assembly is yawed 9.664 deg about +Z in the raw STEP frame;
+     base_link removes that so the URDF frame is clean.
+
+     ZERO CONFIGURATION: q = 0 for every joint reproduces EXACTLY the pose
+     modelled in the STEP file.  Joint limits are therefore relative to the
+     as-modelled CAD pose.
+     ===================================================================== -->
+<robot name="robot_arm">
+
+  <material name="grey">   <color rgba="0.35 0.35 0.38 1.0"/></material>
+  <material name="orange"> <color rgba="0.90 0.45 0.10 1.0"/></material>
+  <material name="blue">   <color rgba="0.15 0.35 0.75 1.0"/></material>
+  <material name="black">  <color rgba="0.10 0.10 0.10 1.0"/></material>
+
+  <!-- world anchor: keeps the arm bolted down in Gazebo -->
+  <link name="world"/>
+  <joint name="world_to_base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.028" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.060625" length="0.056"/></geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.028" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.060625" length="0.056"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0.028" rpy="0 0 0"/>
+      <mass value="0.1222"/>
+      <inertia ixx="1.442e-04" ixy="0" ixz="0" iyy="1.442e-04" iyz="0" izz="2.246e-04"/>
+    </inertial>
+  </link>
+
+  <joint name="joint_1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <origin xyz="0 0 0.056" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.5708" upper="1.5708" effort="0.9" velocity="6.0"/>
+    <dynamics damping="0.05" friction="0.02"/>
+  </joint>
+  <link name="link_1">
+    <visual>
+      <origin xyz="0 0 0.033725" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.0485" length="0.06545"/></geometry>
+      <material name="orange"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.033725" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.0485" length="0.06545"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0 0 0.033725" rpy="0 0 0"/>
+      <mass value="0.1026"/>
+      <inertia ixx="9.696e-05" ixy="0" ixz="0" iyy="9.696e-05" iyz="0" izz="1.207e-04"/>
+    </inertial>
+  </link>
+  <joint name="joint_2" type="revolute">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <origin xyz="0.013738 0 0.041452" rpy="1.570796 -1.372456 -3.141593"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.5708" upper="1.5708" effort="0.9" velocity="6.0"/>
+    <dynamics damping="0.05" friction="0.02"/>
+  </joint>
+  <link name="link_2">
+    <visual>
+      <origin xyz="0.060001 0 0" rpy="0 1.570796 0"/>
+      <geometry><cylinder radius="0.021" length="0.120003"/></geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0.060001 0 0" rpy="0 1.570796 0"/>
+      <geometry><cylinder radius="0.021" length="0.120003"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.060001 0 0" rpy="0 1.570796 0"/>
+      <mass value="0.1001"/>
+      <inertia ixx="1.312e-04" ixy="0" ixz="0" iyy="1.312e-04" iyz="0" izz="2.207e-05"/>
+    </inertial>
+  </link>
+  <joint name="joint_3" type="revolute">
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <origin xyz="0.120003 0 0" rpy="0 0 1.886864"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.5708" upper="1.5708" effort="0.9" velocity="6.0"/>
+    <dynamics damping="0.05" friction="0.02"/>
+  </joint>
+  <link name="link_3">
+    <visual>
+      <origin xyz="0.045882 0 0.006253" rpy="0 1.435347 0"/>
+      <geometry><cylinder radius="0.019" length="0.092613"/></geometry>
+      <material name="orange"/>
+    </visual>
+    <collision>
+      <origin xyz="0.045882 0 0.006253" rpy="0 1.435347 0"/>
+      <geometry><cylinder radius="0.019" length="0.092613"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.045882 0 0.006253" rpy="0 1.435347 0"/>
+      <mass value="0.0442"/>
+      <inertia ixx="3.558e-05" ixy="0" ixz="0" iyy="3.558e-05" iyz="0" izz="7.978e-06"/>
+    </inertial>
+  </link>
+  <joint name="joint_4" type="revolute">
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <origin xyz="0.091765 0 0.012506" rpy="-1.570773 0.199198 -1.62588"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.5708" upper="1.5708" effort="0.18" velocity="8.0"/>
+    <dynamics damping="0.05" friction="0.02"/>
+  </joint>
+  <link name="link_4">
+    <visual>
+      <origin xyz="0.005 0.0004 0.02298" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.0165" length="0.046"/></geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0.005 0.0004 0.02298" rpy="0 0 0"/>
+      <geometry><cylinder radius="0.0165" length="0.046"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.005 0.0004 0.02298" rpy="0 0 0"/>
+      <mass value="0.0205"/>
+      <inertia ixx="5.010e-06" ixy="0" ixz="0" iyy="5.010e-06" iyz="0" izz="2.791e-06"/>
+    </inertial>
+  </link>
+  <joint name="joint_5" type="revolute">
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <origin xyz="0.004993 0 0.027982" rpy="-1.570805 -0.827913 -3.141586"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.5708" upper="1.5708" effort="0.18" velocity="8.0"/>
+    <dynamics damping="0.05" friction="0.02"/>
+  </joint>
+  <link name="link_5">
+    <visual>
+      <origin xyz="0.024795 0.00175 -0.00715" rpy="0 0 0"/>
+      <geometry><box size="0.07811 0.03202 0.0444"/></geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0.024795 0.00175 -0.00715" rpy="0 0 0"/>
+      <geometry><box size="0.07811 0.03202 0.0444"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.024795 0.00175 -0.00715" rpy="0 0 0"/>
+      <mass value="0.0200"/>
+      <inertia ixx="4.994e-06" ixy="0" ixz="0" iyy="1.345e-05" iyz="0" izz="1.188e-05"/>
+    </inertial>
+  </link>
+  <joint name="joint_gripper" type="revolute">
+    <parent link="link_5"/>
+    <child link="gripper_finger_left"/>
+    <origin xyz="0.037902 0.002791 0.002544" rpy="1.570778 0.145192 0.073493"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.35" upper="0.0" effort="0.18" velocity="4.0"/>
+    <dynamics damping="0.05" friction="0.02"/>
+  </joint>
+  <link name="gripper_finger_left">
+    <visual>
+      <origin xyz="0.036025 0.005725 0.01325" rpy="0 0 0"/>
+      <geometry><box size="0.09365 0.04069 0.0165"/></geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0.036025 0.005725 0.01325" rpy="0 0 0"/>
+      <geometry><box size="0.09365 0.04069 0.0165"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.036025 0.005725 0.01325" rpy="0 0 0"/>
+      <mass value="0.0067"/>
+      <inertia ixx="1.076e-06" ixy="0" ixz="0" iyy="5.049e-06" iyz="0" izz="5.821e-06"/>
+    </inertial>
+  </link>
+  <joint name="joint_gripper_mimic" type="revolute">
+    <parent link="link_5"/>
+    <child link="gripper_finger_right"/>
+    <origin xyz="0.037901 0.00279 -0.024356" rpy="1.570778 -0.171339 0.073498"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-0.35" upper="0.0" effort="0.18" velocity="4.0"/>
+    <dynamics damping="0.05" friction="0.02"/>
+    <mimic joint="joint_gripper" multiplier="-1.0" offset="0.0"/>
+  </joint>
+  <link name="gripper_finger_right">
+    <visual>
+      <origin xyz="0.03671 -0.006115 0.01325" rpy="0 0 0"/>
+      <geometry><box size="0.09158 0.04133 0.0165"/></geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <origin xyz="0.03671 -0.006115 0.01325" rpy="0 0 0"/>
+      <geometry><box size="0.09158 0.04133 0.0165"/></geometry>
+    </collision>
+    <inertial>
+      <origin xyz="0.03671 -0.006115 0.01325" rpy="0 0 0"/>
+      <mass value="0.0067"/>
+      <inertia ixx="1.106e-06" ixy="0" ixz="0" iyy="4.835e-06" iyz="0" izz="5.636e-06"/>
+    </inertial>
+  </link>
+
+  <!-- TCP: midpoint of the two finger tips as modelled in the STEP file.
+       Z points along the gripper approach direction, X along the wrist-pitch axis. -->
+  <link name="end_effector"/>
+  <joint name="joint_ee" type="fixed">
+    <parent link="link_5"/>
+    <child link="end_effector"/>
+    <origin xyz="0.122593 0 -0.009776" rpy="-3.068097 -1.570796 0"/>
+  </joint>
+
+  <!-- ======================= Gazebo ======================= -->
+  <gazebo reference="base_link">
+    <material>Gazebo/Grey</material>
+    <mu1>0.9</mu1><mu2>0.9</mu2>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="link_1">
+    <material>Gazebo/Orange</material>
+    <mu1>0.6</mu1><mu2>0.6</mu2>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="link_2">
+    <material>Gazebo/Blue</material>
+    <mu1>0.6</mu1><mu2>0.6</mu2>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="link_3">
+    <material>Gazebo/Orange</material>
+    <mu1>0.6</mu1><mu2>0.6</mu2>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="link_4">
+    <material>Gazebo/Blue</material>
+    <mu1>0.6</mu1><mu2>0.6</mu2>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="link_5">
+    <material>Gazebo/Grey</material>
+    <mu1>0.6</mu1><mu2>0.6</mu2>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="gripper_finger_left">
+    <material>Gazebo/Black</material>
+    <mu1>1.2</mu1><mu2>1.2</mu2>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+  <gazebo reference="gripper_finger_right">
+    <material>Gazebo/Black</material>
+    <mu1>1.2</mu1><mu2>1.2</mu2>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+  <!-- ==================== ros2_control ==================== -->
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <joint name="joint_1">
+      <command_interface name="position"><param name="min">-1.5708</param><param name="max">1.5708</param></command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="joint_2">
+      <command_interface name="position"><param name="min">-1.5708</param><param name="max">1.5708</param></command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="joint_3">
+      <command_interface name="position"><param name="min">-1.5708</param><param name="max">1.5708</param></command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="joint_4">
+      <command_interface name="position"><param name="min">-1.5708</param><param name="max">1.5708</param></command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="joint_5">
+      <command_interface name="position"><param name="min">-1.5708</param><param name="max">1.5708</param></command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="joint_gripper">
+      <command_interface name="position"><param name="min">-0.35</param><param name="max">0.0</param></command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="joint_gripper_mimic">
+      <param name="mimic">joint_gripper</param>
+      <param name="multiplier">-1.0</param>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find robot_arm_description)/config/arm_controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+</robot>
